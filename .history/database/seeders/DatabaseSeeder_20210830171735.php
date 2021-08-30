@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Question;
 use Illuminate\Database\Seeder;
 use Mockery\Generator\Parameter;
 use Illuminate\Database\Eloquent\Model;
@@ -17,9 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(10)->create()->each(function($q){
-            $q->questions()
-            ->saveMany(Question::factory(rand(3,7))->make());    
+        User::factory(parameters:20)->create()->each(function($user){
+            
         });
     }
 }
