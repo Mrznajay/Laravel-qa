@@ -13,30 +13,7 @@
                         </div>
                     </div>
                 </div>
-                @if (Session::has('success'))
-                    <div class="alert alert-success alert-dismissable">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        {{ Session::get('success') }}
-                    </div>
-                @elseif (Session::has('error'))
-                    <div class="alert alert-danger">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true"zzzzzz>&times;</span>
-                        </button>
-                        {{ Session::get('error') }}
-                    </div>
-                 @elseif(Session::has('warning'))
-                    <div class="alert alert-warning">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        {{ Session::get('warning') }}
-                    </div>
-                 @endif
-
-
+                
                 <div class="card-body">
                     @foreach ($question as $q )
                         <div class="media">
