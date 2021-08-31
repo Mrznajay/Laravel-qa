@@ -15,7 +15,6 @@
                                 <p class="lead">
                                     Asked by
                                     <a href="{{ $q->user->url }}">{{ $q->user->name }}</a>
-                                    <small class="text-muted">{{ $q->created_date }}</small>
                                 </p>
                                 {{ Str::limit($q->body, 250) }}
                             </div>

@@ -28,7 +28,8 @@ class Question extends Model
         return route("question.show", $this->id);
     }
 
-    public function getCreatedDateAttribute(){
-        return $this->created_at->diffForHumans();
+    public public function FunctionName(Type $var = null)
+    {
+        # code...
     }
 }

@@ -24,11 +24,5 @@ class Question extends Model
         $this->attributes['slug'] =  Str::slug($value);
     }
 
-    public function gerUrlAttribute(){
-        return route("question.show", $this->id);
-    }
-
-    public function getCreatedDateAttribute(){
-        return $this->created_at->diffForHumans();
-    }
+    public function gerUrlAttribute()
 }

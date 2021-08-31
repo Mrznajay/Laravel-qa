@@ -25,10 +25,6 @@ class Question extends Model
     }
 
     public function gerUrlAttribute(){
-        return route("question.show", $this->id);
-    }
-
-    public function getCreatedDateAttribute(){
-        return $this->created_at->diffForHumans();
+        return route("question.show", $this)
     }
 }

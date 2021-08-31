@@ -49,7 +49,7 @@ class User extends Authenticatable
 
     public function gerUrlAttribute(){
         // return route("question.show", $this->id);
-        return '#';
+        return '#'
     }
 
 }

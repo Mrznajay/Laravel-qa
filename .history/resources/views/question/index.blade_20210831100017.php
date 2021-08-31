@@ -14,8 +14,7 @@
                                 <h3 class="mt-0"> <a href="{{  $q->url  }}}}">{{ $q->title }}</a></h3>
                                 <p class="lead">
                                     Asked by
-                                    <a href="{{ $q->user->url }}">{{ $q->user->name }}</a>
-                                    <small class="text-muted">{{ $q->created_date }}</small>
+                                    <a href="{{ $q->user->url }}"></a>
                                 </p>
                                 {{ Str::limit($q->body, 250) }}
                             </div>
