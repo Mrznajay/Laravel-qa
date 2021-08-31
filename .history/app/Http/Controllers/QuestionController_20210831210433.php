@@ -42,8 +42,8 @@ class QuestionController extends Controller
      */
     public function store(AskQuestionRequest $request)
     {
-        $validated = $request->validated();
-        dd($request->title);
+        // $validated = $request->validated();
+        // dd($request->title);
     }
 
     /**

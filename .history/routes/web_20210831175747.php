@@ -22,9 +22,9 @@ Route::get('/', function () {
 // Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::resources([
-//     'questions' => QuestionController::class,
-// ]);
+Route::resources([
+    'questions' => QuestionController::class,
+]);
 Route::prefix('admin')->group(function () {
 
 });

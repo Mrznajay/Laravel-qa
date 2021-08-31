@@ -9,7 +9,7 @@
                     <div class="d-flex align-items-center">
                         <h2>Ask Questions</h2>
                         <div class="ml-auto">
-                            <a href="{{ route('questions.index') }}" class="btn btn-outline-secondary">Back To Question</a>
+                            <a href="{{ route('question.index') }}" class="btn btn-outline-secondary">Back To Question</a>
                         </div>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                     </div>
                 @endif
 
-            @if (Session::has('success'))
+                @if (Session::has('success'))
                 <div class="alert alert-success alert-dismissable">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -49,7 +49,7 @@
 
 
                 <div class="card-body">
-                    <form action="{{ route('questions.store') }}" method="post">
+                    <form action="{{ route('question.store') }}" method="post">
                         @csrf
 
                         <div class="from-group">

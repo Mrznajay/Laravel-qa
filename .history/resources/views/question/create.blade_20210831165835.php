@@ -9,7 +9,7 @@
                     <div class="d-flex align-items-center">
                         <h2>Ask Questions</h2>
                         <div class="ml-auto">
-                            <a href="{{ route('questions.index') }}" class="btn btn-outline-secondary">Back To Question</a>
+                            <a href="{{ route('question.index') }}" class="btn btn-outline-secondary">Back To Question</a>
                         </div>
                     </div>
                 </div>
@@ -22,39 +22,24 @@
                         @endforeach
                         </ul>
                     </div>
-                @endif
+@endif
 
-            @if (Session::has('success'))
-                <div class="alert alert-success alert-dismissable">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    {{ Session::get('success') }}
-                </div>
-            @elseif (Session::has('error'))
-                <div class="alert alert-danger">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true"zzzzzz>&times;</span>
-                    </button>
-                    {{ Session::get('error') }}
-                </div>
-            @elseif(Session::has('warning'))
-                <div class="alert alert-warning">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    {{ Session::get('warning') }}
-                </div>
-            @endif
+@if(session('success'))
+    <div class="alert alert-success">{{session('success')}}</div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">{{session('error')}}</div>
+@endif
 
 
                 <div class="card-body">
-                    <form action="{{ route('questions.store') }}" method="post">
+                    <form action="{{ route('question.store') }}" method="post">
                         @csrf
 
                         <div class="from-group">
                             <label for="question-title">Question Title</label>
-                            <input type="text" name="title" id="question-title" class="form-control" value="{{ old('title') }}">
+                            <input type="text" name="title" id="question-title" class="form-control" {{ $errors->has('title') ? 'is-invalid' : '' }}>
 
                             @if ($errors->has('title'))
                                 <div class="invalid-feedback">
@@ -65,7 +50,7 @@
 
                         <div class="from-group">
                             <label for="question-body">Explain Question</label>
-                            <textarea rows="10" name="body" id="question-body" class="form-control" {{ $errors->has('body') ? 'is-invalid' : '' }}>{{ old('body') }} </textarea>
+                            <textarea rows="10" name="body" id="question-body" class="form-control" {{ $errors->has('body') ? 'is-invalid' : '' }}> </textarea>
 
                             @if ($errors->has('body'))
                                 <div class="invalid-feedback">

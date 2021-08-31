@@ -22,15 +22,13 @@ Route::get('/', function () {
 // Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::resources([
-//     'questions' => QuestionController::class,
-// ]);
+Route::resources([
+    'questions' => QuestionController::class,
+]);
 Route::prefix('admin')->group(function () {
 
 });
     // Route::resource('/question', [App\Http\Controllers\QuestionController::class]);
  
-    Route::get('/index', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions.index');
-    Route::get('/create', [App\Http\Controllers\QuestionController::class, 'create'])->name('questions.create');
-    Route::post('/store', [App\Http\Controllers\QuestionController::class, 'store'])->name('questions.store');
+    Route::get('/index', [App\Http\Controllers\QuestionController::class, 'index'])->name('home');
 

@@ -30,20 +30,20 @@ class QuestionController extends Controller
      */
     public function create()
     {
-       $question = new Question();
+       $questions = new Question();
        return view('question.create', compact('question'));
     }
 
     /**
      * Store a newly created resource in storage.
-     * 
+     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(AskQuestionRequest $request)
     {
-        $validated = $request->validated();
-        dd($request->title);
+        // $validated = $request->validated();
+        dd($request);
     }
 
     /**

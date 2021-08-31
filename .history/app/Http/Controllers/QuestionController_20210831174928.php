@@ -17,9 +17,9 @@ class QuestionController extends Controller
     public function index()
     {
         // \DB::enableQueryLog();
-        $question = Question::with('user')->latest()->paginate(10);
+        $questions = Question::with('user')->latest()->paginate(10);
 
-        return view('question.index', compact('question'));
+        return view('questions.index', compact('questions'));
         //  dd(\DB::getQueryLog()); 
     }
 
@@ -31,19 +31,19 @@ class QuestionController extends Controller
     public function create()
     {
        $question = new Question();
-       return view('question.create', compact('question'));
+       return view('questions.create', compact('questions'));
     }
 
     /**
      * Store a newly created resource in storage.
-     * 
+     *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(AskQuestionRequest $request)
     {
-        $validated = $request->validated();
-        dd($request->title);
+        // $validated = $request->validated();
+        dd($request);
     }
 
     /**

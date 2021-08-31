@@ -9,7 +9,7 @@
                     <div class="d-flex align-items-center">
                         <h2>Ask Questions</h2>
                         <div class="ml-auto">
-                            <a href="{{ route('questions.index') }}" class="btn btn-outline-secondary">Back To Question</a>
+                            <a href="{{ route('question.index') }}" class="btn btn-outline-secondary">Back To Question</a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
 
 
                 <div class="card-body">
-                    <form action="{{ route('questions.store') }}" method="post">
+                    <form action="{{ route('question.store') }}" method="">
                         @csrf
 
                         <div class="from-group">

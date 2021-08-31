@@ -40,10 +40,10 @@ class QuestionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AskQuestionRequest $request)
+    public function store(Request $request)
     {
-        $validated = $request->validated();
-        dd($request->title);
+        // $validated = $request->validated();
+        // dd($request->title);
     }
 
     /**
