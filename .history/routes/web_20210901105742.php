@@ -25,16 +25,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Route::resources([
 //     'questions' => QuestionController::class,
 // ]);
-Route::resource('questions', QuestionController::class);
-
 Route::prefix('question')->group(function () {
 
 });
     // Route::resource('/question', [App\Http\Controllers\QuestionController::class]);
  
-    // Route::get('/index', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions.index');
-    // Route::get('/create', [App\Http\Controllers\QuestionController::class, 'create'])->name('questions.create');
-    // Route::post('/store', [App\Http\Controllers\QuestionController::class, 'store'])->name('questions.store');
-    // Route::get('/edit/{id}', [App\Http\Controllers\QuestionController::class, 'edit'])->name('questions.edit');
-    // Route::post('/update/{id}', [App\Http\Controllers\QuestionController::class, 'update'])->name('questions.update');
+    Route::get('/index', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions.index');
+    Route::get('/create', [App\Http\Controllers\QuestionController::class, 'create'])->name('questions.create');
+    Route::post('/store', [App\Http\Controllers\QuestionController::class, 'store'])->name('questions.store');
+    Route::get('/edit/{id}', [App\Http\Controllers\QuestionController::class, 'edit'])->name('questions.edit');
+    Route::post('/update', [App\Http\Controllers\QuestionController::class, 'update'])->name('questions.update');
 
