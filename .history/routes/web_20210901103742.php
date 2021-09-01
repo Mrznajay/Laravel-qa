@@ -22,11 +22,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Route::resources([
-//     'questions' => QuestionController::class,
-// ]);
-Route::resource('questions', QuestionController::class);
-
+Route::resources([
+    'questions' => QuestionController::class,
+]);
 Route::prefix('question')->group(function () {
 
 });
@@ -36,5 +34,5 @@ Route::prefix('question')->group(function () {
     // Route::get('/create', [App\Http\Controllers\QuestionController::class, 'create'])->name('questions.create');
     // Route::post('/store', [App\Http\Controllers\QuestionController::class, 'store'])->name('questions.store');
     // Route::get('/edit/{id}', [App\Http\Controllers\QuestionController::class, 'edit'])->name('questions.edit');
-    // Route::post('/update/{id}', [App\Http\Controllers\QuestionController::class, 'update'])->name('questions.update');
+    // Route::post('/update', [App\Http\Controllers\QuestionController::class, 'update'])->name('questions.update');
 

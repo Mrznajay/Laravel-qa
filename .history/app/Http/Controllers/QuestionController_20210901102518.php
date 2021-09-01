@@ -65,9 +65,9 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Question $question)
+    public function edit($id)
     {
-        // $question = Question::find($id);
+        $question = Question::find($id);
         return view('question.edit',compact('question'));
     }
 
@@ -78,10 +78,10 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(AskQuestionRequest $request,Question $question)
+    public function update(AskQuestionRequest $request,$id)
     {
-        // dd($question);
-        $question->update($request->only('title', 'body'));
+        $u = Question::where('id', '=', $id)->first();
+        update($request->only('title','body'));
         return redirect()->route('questions.index')->with('success','Your Question has been updated');
     }
 
