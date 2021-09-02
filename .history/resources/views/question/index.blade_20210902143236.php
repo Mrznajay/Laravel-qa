@@ -67,11 +67,11 @@
                                         @endif
 
                                         @if (Auth::user()->can('delete-question',$q))
-                                            <form action="{{ route('questions.destroy', $q->id) }}" method="post" class="form-delete">
-                                                @method('DELETE')
-                                                @csrf
-                                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure wanna delete')">Delete</button>
-                                            </form>
+                                        <form action="{{ route('questions.destroy', $q->id) }}" method="post" class="form-delete">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure wanna delete')">Delete</button>
+                                        </form>
                                         @endif
                                     </div>
                                 </div>
