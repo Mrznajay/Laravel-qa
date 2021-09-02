@@ -10,11 +10,6 @@ use App\Http\Requests\AskQuestionRequest;
 
 class QuestionController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth', ['except' => 'index','show']);
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -102,7 +97,7 @@ class QuestionController extends Controller
     public function destroy(Question $question)
     {
         //
-        $this->authorize('delete', $question);
+        $this->authorize('update', $question);
         $question->delete();
         return redirect()->route('questions.index')->with('success','Your Question has been deleted');
     }

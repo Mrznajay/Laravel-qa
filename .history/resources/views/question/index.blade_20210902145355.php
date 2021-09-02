@@ -66,13 +66,13 @@
                                             <a href="{{ route('questions.edit', $q->id) }}" class="btn btn-sm btn-outline-info">Edit</a>    
                                         @endcan
                                         
-                                        @can ('delete',$q)
+                                        @e (Auth::user()->can('delete',$q))
                                             <form action="{{ route('questions.destroy', $q->id) }}" method="post" class="form-delete">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure wanna delete')">Delete</button>
                                             </form>
-                                        @endcan
+                                        @ende
                                        
                                     </div>
                                 </div>
