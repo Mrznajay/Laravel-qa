@@ -31,7 +31,7 @@ Route::get('/questions/{slug}', [App\Http\Controllers\QuestionController::class,
 Route::prefix('question')->group(function () {
 
 });
-    // Route::resource('/question', [App\Http\Controllers\QuestionController::class]);
+    // Route::resource('/question', [App\Http\Controllers\QuestionController::class]);c
  
     // Route::get('/index', [App\Http\Controllers\QuestionController::class, 'index'])->name('questions.index');
     // Route::get('/create', [App\Http\Controllers\QuestionController::class, 'create'])->name('questions.create');
