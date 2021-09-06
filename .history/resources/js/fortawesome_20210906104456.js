@@ -1,0 +1,1 @@
+import fortawesome from '@fortawesome/fontawe'
