@@ -66,6 +66,6 @@ class AnswerController extends Controller
     {
         $this->authorize('delete', $answer);
         $answer->delete();
-        return back()->with('success','Your answer has been removed');
+        return back()
     }
 }
