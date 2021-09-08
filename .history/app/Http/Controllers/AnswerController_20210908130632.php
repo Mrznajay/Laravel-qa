@@ -33,7 +33,7 @@ class AnswerController extends Controller
      */
     public function edit(Question $question,Answer $answer)
     {
-        // dd($question);/
+        //
         $this->authorize('update', $answer);
         return view('answer.edit', compact('question','answer'));
     }

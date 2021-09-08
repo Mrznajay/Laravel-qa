@@ -20,7 +20,7 @@ class AnswerController extends Controller
         ]);
         $question->answers()->create( $request->validate([
             'body' => 'required'
-        ]) + ['user_id' => Auth::user()->id]);
+        ]) + ['user_id' => Auth::user()->id])->dd();
 
         return back()->with('success','Your answer has successfully been create');
     }

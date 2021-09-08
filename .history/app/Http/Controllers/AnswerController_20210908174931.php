@@ -20,7 +20,7 @@ class AnswerController extends Controller
         ]);
         $question->answers()->create( $request->validate([
             'body' => 'required'
-        ]) + ['user_id' => Auth::user()->id]);
+        ]) + ['user_id' => Auth::user()->id])->dd();
 
         return back()->with('success','Your answer has successfully been create');
     }
@@ -33,7 +33,7 @@ class AnswerController extends Controller
      */
     public function edit(Question $question,Answer $answer)
     {
-        // dd($question);/
+        dd($answer)
         $this->authorize('update', $answer);
         return view('answer.edit', compact('question','answer'));
     }

@@ -33,7 +33,7 @@ class AnswerController extends Controller
      */
     public function edit(Question $question,Answer $answer)
     {
-        // dd($question);/
+        //
         $this->authorize('update', $answer);
         return view('answer.edit', compact('question','answer'));
     }
@@ -50,10 +50,8 @@ class AnswerController extends Controller
         //
         $this->authorize('update', $answer);
         $answer->update($request->validate([
-            'body' => 'required'
+            'body'
         ]));
-
-        return redirect()->route('questions.show', $question->slug)->with('success','Your answer has update');
     }
 
     /**

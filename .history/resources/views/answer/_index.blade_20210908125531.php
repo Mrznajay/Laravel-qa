@@ -32,7 +32,7 @@
                                         @endcan
                                         
                                         @can ('delete',$answer)
-                                            <form action="{{ route('questions.answers.destroy',[$question->id, $answer->id]) }}" method="post" class="form-delete">
+                                            <form action="{{ route('questions.`answers.destroy',[$question->id, $answer->id]) }}" method="post" class="form-delete">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure wanna delete')">Delete</button>
@@ -56,6 +56,21 @@
                                             </a>    
                                         </div> 
                                     </div>
+                                </div>
+                            </div>
+                            <div class="float-right">
+                                <span class="text-muted">
+                                    Answered {{ $answer->created_date }}
+                                </span>
+                                <div class="media mt-2">
+                                    <a href="{{ $answer->user->url }}" class="pr-2">
+                                        <img src="{{ $answer->user->avatar }}" alt="">
+                                    </a>
+                                    <div class="media-body mt-1">
+                                        <a href="{{ $answer->user->url }}">
+                                            {{ $answer->user->name }}
+                                        </a>    
+                                    </div> 
                                 </div>
                             </div>
                         </div>
