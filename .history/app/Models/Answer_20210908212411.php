@@ -35,6 +35,7 @@ class Answer extends Model
 
         static::deleted(function($answer){ 
             $question = $answer->question;
+            
             $question->decrement('answers_count');
             if($question->best_answer_id === $answer->id) {
                 $question->best_answer_id = NULL;
@@ -43,11 +44,7 @@ class Answer extends Model
         });
     } 
 
-    public function getCreatedDateAttribute() {
+    public function getCreatedDateAttribute(){
         return $this->created_at->diffForHumans();
-    }
-
-    public function getStatusAttribute() {
-        return $this->id === $this->question->best_answer_id ? 'accepted vote-accepted' : '';
     }
 }

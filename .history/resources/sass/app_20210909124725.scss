@@ -85,10 +85,9 @@ form.form-delete {
             }
         }
 
-        &.accepted {
-            &.vote-accepted, &.vote-accepted:hover {
-                color: $green;
-            }
+        
+        &.vote-accepted {
+            color: $green;
         }
     }
 

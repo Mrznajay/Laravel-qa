@@ -38,16 +38,12 @@ class Answer extends Model
             $question->decrement('answers_count');
             if($question->best_answer_id === $answer->id) {
                 $question->best_answer_id = NULL;
-                $question->save();
+                $question->save()
             }
         });
     } 
 
-    public function getCreatedDateAttribute() {
+    public function getCreatedDateAttribute(){
         return $this->created_at->diffForHumans();
-    }
-
-    public function getStatusAttribute() {
-        return $this->id === $this->question->best_answer_id ? 'accepted vote-accepted' : '';
     }
 }

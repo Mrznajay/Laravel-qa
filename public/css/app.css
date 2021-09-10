@@ -16184,6 +16184,6 @@ form.form-delete {
 .vote-controls a.favorite.favorited, .vote-controls a.favorite.favorited:hover {
   color: #ffed4a;
 }
-.vote-controls a.accept.vote-accepted, .vote-controls a.accept.vote-accepted:hover {
+.vote-controls a.accepted.vote-accepted, .vote-controls a.accepted.vote-accepted:hover {
   color: #09ff70;
 }
